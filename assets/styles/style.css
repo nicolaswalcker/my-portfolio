@@ -1,0 +1,575 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700&family=Poppins:wght@200;400;700&display=swap');
+
+:root {
+    --primary-black:#1E1E1E;
+    --secondary-black: #4F5B62;
+    --dark:#000A12;
+    --primary-yellow:#FFEA00;
+    --light-yellow:#FFFF56;
+    --dark-yellow:#C7B800;
+    --titles: #fff;
+    --letter-in-yellow:#000;
+    --subtitles:#BFBFBF;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+#particles-js {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+#scrollPath {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 5px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+#progressbar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(to top, var(--light-yellow), var(--dark-yellow));
+    animation: animate 5s linear infinite;
+}
+
+
+
+#progressbar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, var(--light-yellow), var(--dark-yellow));
+    filter: blur(30px);
+}
+
+#progressbar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, var(--light-yellow), var(--dark-yellow));
+    
+}
+
+body {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-black);
+}
+
+h2 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 60px;
+    line-height: 73px;
+    letter-spacing: 0.005em;
+    color: #FFFFFF;
+    margin-bottom: 35px;
+}
+
+/*Cuidando do cabecalho*/
+#header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    background-color: var(--primary-black);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    animation: 400ms ease-in;
+    box-shadow: 
+    0px 1px 5px rgba(0, 0, 0, 0.2), 
+    0px 1px 5px rgba(0, 0, 0, 0.12), 
+    0px 3px 10px rgba(0, 0, 0, 0.14);
+}
+
+#header h4 {
+    color: white;
+    margin-left: 100px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 41px;
+    letter-spacing: 0.005em;
+}
+
+#header nav {
+    margin-right: 100px;
+    position: relative;
+}
+
+#header nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+
+#header nav ul li {
+    padding-left: 1.4em;
+}
+
+#header nav ul li a {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 29px;
+    letter-spacing: 0.005em;
+    color:var(--secondary-black);
+    position: relative;   
+    transition:all ease-in-out 250ms;
+}
+/*Animando barra de navegação*/
+
+#header nav ul li a::after {
+    content: '';
+    position: absolute;
+    display: block;
+    bottom: -2em;
+    height: 0.125em;
+    width: 0%;
+    background-color: var(--light-yellow);
+    transition:all ease-in-out 250ms;
+}
+
+#header nav ul li a:hover::after {
+    color: var(--light-yellow);
+    width: 100%;
+}
+
+#header nav ul li a:hover{
+    color: var(--light-yellow);
+}
+
+
+/*Cuidando da parte do nome -> Início*/
+
+#start {
+    margin-left: 100px;
+    text-align: left;
+    margin-top: 150px;
+    font-family: 'Montserrat';
+    height: 80vh;
+    
+}
+
+#start h4 {
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 41px;
+    letter-spacing: 0.005em;
+    color: var(--subtitles);
+}
+
+#start h1 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 96px;
+    line-height: 117px;
+    color: var(--titles);
+    letter-spacing: 0.005em;
+}
+
+/*Cuidando da parte do sobre mim */
+
+#about-me {
+    margin-left: 100px;
+}
+
+#about-me .profile-card {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    width: 950px;
+    height: 450px;
+    background-image: linear-gradient(135deg, #171717 8.33%, #000a12 8.33%, #000a12 50%, #171717 50%, #171717 58.33%, #000a12 58.33%, #000a12 100%);
+    background-size: 8.49px 8.49px;
+    border: 1px solid #C7B800;
+    box-shadow: 0px 24px 38px rgba(237, 55, 103, 0.24), 0px 9px 46px rgba(237, 55, 103, 0.22), 0px 11px 15px rgba(199, 184, 0, 0.2);
+    border-radius: 6px;
+}
+
+#about-me .profile-card img { 
+    height: 449px;
+    border-radius: 5px 0 0 5px;
+    margin-left: -1px;
+}
+
+#about-me .profile-card .infos {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding-left: 50px;
+}
+
+#about-me .profile-card .infos h4 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 41px;
+    text-align: left;
+    letter-spacing: 0.005em;
+    color: var(--titles);
+}
+
+#about-me .profile-card .infos p {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 0.005em;
+    color: var(--subtitles);
+    padding-right: 25px;
+    padding-top: 5px;
+}
+
+/*Cuidando da parte dos projetos*/
+
+#projects {
+    margin: 150px 100px 0 100px;
+}
+
+#projects .container {
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    flex-wrap: wrap;
+    
+}
+
+#projects img {
+    width: 145px;
+    height: 164px;
+    border-radius: 7px;
+    margin-top: 21px;
+}
+
+#projects .container .project-card{
+    width: 300px;
+    height: 383px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    background-image: linear-gradient(135deg, #171717 8.33%, #000a12 8.33%, #000a12 50%, #171717 50%, #171717 58.33%, #000a12 58.33%, #000a12 100%);
+    background-size: 8.49px 8.49px;
+    border-radius:5px;
+    border: 2px solid var(--dark-yellow);
+    
+
+}
+
+#projects .container .project-card .title{
+    width: 300px;
+    height: 20px;
+    text-align: center;
+    background-color: var(--dark-yellow);
+    position: static;
+    top: 0;
+    z-index: 1;
+    border-radius: 5px 5px 0 0;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.005em;
+}
+
+#projects .container .project-card .tec-icons {
+    margin-top: 16px;
+}
+
+
+#projects .container .project-card .description {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 17px;
+    text-align: center;
+    letter-spacing: 0.005em;
+    color: var(--titles);
+    margin: 10px;
+    text-align:left;
+}
+
+#projects .container .project-card .buttons {
+    display: flex;
+    align-items: center;
+    justify-content:center; 
+    margin-bottom: 10px; 
+}
+
+#projects .container .project-card .buttons a{
+    margin: 10px;
+    width: 110px;
+    height: 30px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content:center; 
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    letter-spacing: 0.005em;
+    color: var(--titles);  
+    position: relative;
+    border: 2px solid var(--primary-yellow);
+    transition: 0.4s;
+    overflow: hidden;
+}
+
+#projects .container .project-card .buttons a:hover {
+    color: var(--letter-in-yellow);
+    transition: 0.4s;
+}
+
+#projects .container .project-card .buttons a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: var(--primary-yellow);
+    z-index: -1;
+    transition: 0.4s;
+    top: 0;
+    
+    
+}
+
+#projects .container .project-card .buttons a:hover::before {
+    height: 180%;
+    
+}
+
+#projects .anouncement h2{
+    font-family:'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 60px;
+    line-height: 73px;
+    letter-spacing: 0.005em;
+    margin-top: 30px;
+}
+
+#projects .anouncement a {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    width: 222px;
+    height: 74px;
+    background-color: var(--primary-yellow);
+    position: relative;
+    
+}
+
+#projects .anouncement a p{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+    text-align: center;
+    letter-spacing: 0.005em;
+    color: #000000; 
+}
+
+
+#projects .anouncement a span {
+    position: absolute;
+    display: block;
+    background: var(--dark);
+}
+
+
+#projects .anouncement a span:nth-child(1) {
+    left: 0;
+    bottom: 0;
+    width: 3px;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.25s;
+}
+
+#projects .anouncement a:hover span:nth-child(1) {
+    transform: scaleY(1);
+    transform-origin: bottom;
+    transition: transform 0.25s;
+}
+
+
+#projects .anouncement a span:nth-child(2) {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.25s;
+}
+
+#projects .anouncement a:hover span:nth-child(2) {
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 0.25s;
+}
+
+
+#projects .anouncement a span:nth-child(3) {
+    right: 0;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.25s;
+}
+
+#projects .anouncement a:hover span:nth-child(3) {
+    transform: scaleY(1);
+    transform-origin: top;
+    transition: transform 0.25s;
+}
+
+#projects .anouncement a span:nth-child(4) {
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s;
+}
+
+#projects .anouncement a:hover span:nth-child(4) {
+    transform: scaleX(1);
+    transform-origin: right;
+    transition: transform 0.25s;
+}
+
+
+#contacts {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    background-image: linear-gradient(135deg, #171717 8.33%, #000a12 8.33%, #000a12 50%, #171717 50%, #171717 58.33%, #000a12 58.33%, #000a12 100%);
+    background-size: 8.49px 8.49px;
+    margin-top: 150px;
+}
+
+#contacts .icons-container {
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content:center;
+}
+
+#contacts .icons-container h4 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0.005em;
+    color: var(--titles);
+    margin-bottom: 13px;
+    text-align: left;
+}
+
+#contacts .icons-container .icons-buttons {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+svg {
+    width: 36px;
+}
+
+#contacts .button {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    width: 70px;
+    height: 70px;
+    background: #1E1E1E;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 6px 10px rgba(0, 0, 0, 0.14);
+    border-radius: 15px;
+    margin-right: 10px;
+    padding: 5px;
+    transition: 0.25s;
+}
+
+#contacts .button:hover {
+    background: #303030;
+}
+
+#contacts .right-side {
+    margin-right: 100px;
+    margin-top: 17px;
+}
+
+#contacts .right-side h6 {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16.6667px;
+    line-height: 25px;
+    letter-spacing: 0.005em;
+    color: var(--light-yellow);
+}
+
+#contacts .right-side p {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+    position: absolute;
+    margin-top: 30px;
+    letter-spacing: 0.005em;
+    color: var(--light-yellow);
+}
+
+#contacts .right-side .button {
+    margin-left:150px;
+    margin-top: 4px;
+}
